@@ -1,0 +1,27 @@
+<h2>It was interrupted</h2>
+<p>Here's a class <code class="language-java">Worker</code> that extends <code class="language-java">Thread</code>.</p>
+<pre><code class="language-java">class Worker extends Thread {
+    
+    @Override
+    public void run() {
+        String msg = "It was interrupted";     // 1
+        
+        try {
+            Thread.sleep(200);                 // 2
+        } catch (InterruptedException e) {
+            System.out.println(msg);
+        }
+        
+        int i = 0;                             // 3
+        while (i &lt; 100_000) {
+            if (isInterrupted()) {
+                System.out.println(msg);
+                return;
+            }                      
+            i++;                               // 4
+        }
+        
+        System.out.println("Finished");        // 5
+    }
+}</code></pre>
+<p>Another thread calls the <code class="language-java">interrupt</code> method of this thread. The <code class="language-java">Worker</code> thread will print <strong>"It was interrupted"</strong> if another thread interrupts it during...</p>

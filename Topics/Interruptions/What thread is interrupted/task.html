@@ -1,0 +1,19 @@
+<h2>What thread is interrupted?</h2>
+<p>What is the output of this snippet?</p>
+
+<pre><code class="language-java">class Main {
+    public static void main(String[] args) {
+        Thread thread = new Thread(() -&gt; {
+            while(Thread.currentThread().isInterrupted()) {
+                try {
+                    Thread.sleep(2_000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+        });
+        thread.start();
+        thread.interrupt();
+        System.out.println(Thread.currentThread().isInterrupted());
+    }
+}</code></pre>

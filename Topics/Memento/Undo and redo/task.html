@@ -1,0 +1,5 @@
+<h2>Undo and redo</h2>
+<p></p>
+<p>In this task, you must implement the <code class="java">undo</code> and <code class="java">redo</code> methods in the <code class="java">Caretaker</code> class using two <code class="java">ArrayDeque</code> collections available in that class.</p>
+<p>The required class structure is already set up: the <code class="java">beforeValueChanged</code> method, which is called by the client before modifying the value in the <code class="java">Originator</code> instance, takes care of tracking the changes in the Originator instance, populates <code class="java">undoStack</code> and clears <code class="java">redoStack</code>.</p>
+<p>The logic of the methods you must implement is quite simple: <code class="java">undo</code> must replace the value in <code class="java">originator</code> with the most recent value stored in <code class="java">undoStack</code>, and <code class="java">redo</code> must reverse the most recent action of the <code class="java">undo</code> method.</p><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 5 seconds</font><br><br>

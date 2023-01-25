@@ -1,0 +1,26 @@
+<h2>Right output</h2>
+<p>What will be the output of this code?</p>
+<pre><code class="language-java">public class Outer {
+
+    private int x = 8;
+
+    void someMethod() {
+
+        final int x = 10;
+
+        class LocalInner {
+
+            private void print(int x) {
+                System.out.println(x);
+            }
+        }
+
+        LocalInner inner = new LocalInner();
+        inner.print(15);
+    }
+
+    public static void main(String[] args) {
+        Outer outer = new Outer();
+        outer.someMethod();
+    }
+}</code></pre>

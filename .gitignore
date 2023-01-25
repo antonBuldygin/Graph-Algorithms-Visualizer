@@ -1,0 +1,21 @@
+# course config files
+*.yaml
+
+# gradle
+.gradle/
+gradle/
+gradlew
+*.bat
+build
+
+
+# idea confid
+.idea
+
+# old stages
+/Graph-Algorithms Visualizer/*
+!/Graph-Algorithms Visualizer/task/
+/Graph-Algorithms Visualizer/task/*
+!/Graph-Algorithms Visualizer/task/src/
+!/Graph-Algorithms Visualizer/task/build.gradle
+!/Graph-Algorithms Visualizer/task/build.gradle.kts

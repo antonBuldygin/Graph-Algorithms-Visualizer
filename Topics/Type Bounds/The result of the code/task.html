@@ -1,0 +1,24 @@
+<h2>The result of the code</h2>
+<p>Take a look at this piece of code:</p>
+
+<pre><code class="language-java">public class Application&lt;T&gt; {
+  
+  public static void main(String[] args) {
+    
+    Application&lt;Number&gt; application = new Application&lt;&gt;();
+    Number n1 = application.typeBoundsTest(Integer.valueOf(10));
+    Number n2 = application.typeBoundsTest(Double.valueOf(1.0));
+    
+    System.out.println(String.format("%s %s", n1, n2));
+
+  }
+  
+  public &lt;T1 extends T&gt; T typeBoundsTest(T1 item) {
+    return item;
+  }
+
+}</code></pre>
+
+<p>What will be the result of its compilation and execution? </p>
+
+<p><strong>Note,</strong> that both <code class="language-java">Integer</code> and <code class="language-java">Double</code> (as well as some other wrapper classes like <code class="language-java">Float</code>, <code class="language-java">Long</code>, etc.) are subclasses of an abstract class <code class="language-java">Number</code>.</p>
